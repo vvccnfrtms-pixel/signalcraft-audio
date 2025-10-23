@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact SignalCraft Audio</title>
+  <meta name="description" content="Get in touch with SignalCraft Audio for inquiries, custom orders, or support.">
+  <link rel="icon" href="assets/img/logo.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html"><img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img"></a>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a class="cta btn" href="products.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact container">
+      <h1>Contact Us</h1>
+      <p>Have questions about our boutique pedals or need support? Reach out to us via the form below or through our social channels.</p>
+
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Waveform -->
+    <section class="bottom-wave">
+      <svg id="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none">
+        <polyline fill="none" stroke="#FFD94B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> SignalCraft Audio — Designed & hand-tested in East London, South Africa.</small>
+      <div class="social">
+        <a class="social-icon" href="https://www.instagram.com/yourhandle" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.6" fill="none"></rect>
+            <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6" fill="none"></circle>
+            <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor"></circle>
+          </svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/yourchannel" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.8 15.5V8.5l6.2 3.5-6.2 3.5z"></path></svg>
+        </a>
+        <a class="social-icon" href="https://www.tiktok.com/@yourhandle" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2v11.3a3.7 3.7 0 1 1-1.6-3.1V6.2L17 7.6V9.4a6.3 6.3 0 1 0 1.5 3.9V3.6L12.5 2z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/shop.js" defer></script>
+</body>
+</html>
