@@ -3,37 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — SignalCraft Audio</title>
-  <meta name="description" content="Learn more about SignalCraft Audio — precision, craftsmanship, and passion for tone." />
+  <title>SignalCraft Audio — About</title>
+  <meta name="description" content="Learn about SignalCraft Audio boutique guitar pedals. Hand-tested in East London. Premium tone, limited runs." />
+  <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="assets/img/logo.png" alt="SignalCraft Audio Logo"></a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img">
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="cta btn" href="shop.html">Shop</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="shop.html" class="shop-link">Shop</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <section class="about">
-    <h1>About SignalCraft Audio</h1>
-    <p>Born from the desire to blend artistry and engineering, SignalCraft Audio creates boutique guitar pedals that respond like instruments themselves — expressive, reliable, and full of character.</p>
-    <p>Each pedal is hand-tested in East London using top-grade components, ensuring exceptional tone and build quality for musicians who demand the best.</p>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h1 class="hero-slogan">Our Story</h1>
+        <p class="hero-description">SignalCraft Audio creates boutique guitar pedals designed for recording and stage professionals. Each pedal is hand-tested in East London, combining premium components and small-batch craftsmanship.</p>
+      </div>
+    </section>
 
-  <footer>
-    <p>SignalCraft Audio — Designed & Hand-Tested in East London</p>
+    <!-- ABOUT CONTENT -->
+    <section class="container fade-in" id="about-content">
+      <div class="about-grid">
+        <article>
+          <h2>Our Philosophy</h2>
+          <p>We believe every guitarist deserves pedals that inspire creativity and deliver unparalleled tone. Our products are made for musicians who demand the best, blending traditional analog techniques with modern boutique innovation.</p>
+        </article>
+        <article>
+          <h2>Craftsmanship</h2>
+          <p>Each pedal is hand-assembled and tested by experienced engineers. We source premium components, ensuring every unit performs reliably in both studio and live settings.</p>
+        </article>
+        <article>
+          <h2>Community</h2>
+          <p>We collaborate with local artists and musicians to design signature tones. Our limited-edition runs create collectible pedals while supporting creativity in the guitar community.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TEAM OR ARTIST COLLABORATIONS -->
+    <section class="container fade-in" id="team">
+      <h2>Our Collaborators</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/img/artist1.png" alt="Artist Collaboration Logo">
+          <h4>Artist Name 1</h4>
+          <p>Signature pedal series collaboration.</p>
+        </div>
+        <div class="card">
+          <img src="assets/img/artist2.png" alt="Artist Collaboration Logo">
+          <h4>Artist Name 2</h4>
+          <p>Limited edition pedal design.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANIMATED WAVE -->
+    <section class="bottom-wave">
+      <svg id="logo-wave-svg" class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#FFD94B"/>
+            <stop offset="50%" stop-color="#FFC300"/>
+            <stop offset="100%" stop-color="#FFD94B"/>
+          </linearGradient>
+        </defs>
+        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
+      </svg>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> SignalCraft Audio — Designed & hand-tested in East London, South Africa.</small>
+      <div class="social">
+        <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="products.html">Products</a> |
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- SCRIPTS -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
