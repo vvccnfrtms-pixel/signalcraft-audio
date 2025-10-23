@@ -3,54 +3,112 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Products — SignalCraft Audio</title>
-  <meta name="description" content="Explore SignalCraft Audio's boutique hand-built guitar pedals." />
+  <title>SignalCraft Audio — Products</title>
+  <meta name="description" content="Browse SignalCraft Audio boutique guitar pedals. Hand-tested in East London, premium tone, limited runs." />
+  <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="assets/img/logo.png" alt="SignalCraft Audio Logo"></a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img">
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="cta btn" href="shop.html">Shop</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="shop.html" class="shop-link">Shop</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <section class="product-list">
-    <h1>Our Pedals</h1>
-    <p>Every SignalCraft pedal is designed and tested for authentic tone and superior reliability.</p>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h1 class="hero-slogan">Our Boutique Pedals</h1>
+        <p class="hero-description">Hand-tested and crafted in East London. Explore our collection of premium pedals for recording and stage performance.</p>
+      </div>
+    </section>
 
-    <div class="pedal-grid">
-      <div class="pedal">
-        <img src="assets/img/overdrive.jpg" alt="Overdrive Pedal" />
-        <h3>Overdrive</h3>
-        <p>Dynamic tone with classic warmth.</p>
+    <!-- PRODUCTS GRID -->
+    <section class="products-preview container" aria-labelledby="all-products-heading">
+      <h2 id="all-products-heading">All Pedals</h2>
+      <div class="grid">
+        <div class="card fade-in">
+          <img src="assets/img/pedal3.jpg" alt="SignalCraft Overdrive Pedal" />
+          <h4>Overdrive</h4>
+          <span class="badge limited">Limited Edition</span>
+          <p>Natural tube-like overdrive that responds dynamically to your playing.</p>
+          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
+        </div>
+        <div class="card fade-in">
+          <img src="assets/img/pedal1.jpg" alt="SignalCraft Fuzz Pedal" />
+          <h4>Fuzz Distortion</h4>
+          <span class="badge coming-soon">Coming Soon</span>
+          <p>Rugged analog fuzz with boutique tone. Limited edition finish.</p>
+          <button class="notify-btn btn-outline">Notify Me</button>
+        </div>
+        <div class="card fade-in">
+          <img src="assets/img/pedal2.jpg" alt="SignalCraft Analog Delay Pedal" />
+          <h4>Analog Delay</h4>
+          <p>Warm, lush repeats with precise control for recording or live performance.</p>
+          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
+        </div>
+        <!-- Add more products here -->
       </div>
-      <div class="pedal">
-        <img src="assets/img/fuzz.jpg" alt="Fuzz Distortion" />
-        <h3>Fuzz Distortion</h3>
-        <p>Vintage-inspired grit and harmonic edge.</p>
+    </section>
+
+    <!-- ANIMATED WAVE -->
+    <section class="bottom-wave">
+      <svg id="logo-wave-svg" class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#FFD94B"/>
+            <stop offset="50%" stop-color="#FFC300"/>
+            <stop offset="100%" stop-color="#FFD94B"/>
+          </linearGradient>
+        </defs>
+        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
+      </svg>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> SignalCraft Audio — Designed & hand-tested in East London, South Africa.</small>
+      <div class="social">
+        <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
       </div>
-      <div class="pedal">
-        <img src="assets/img/delay.jpg" alt="Analog Delay" />
-        <h3>Analog Delay</h3>
-        <p>Lush analog repeats for expressive ambience.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <p>SignalCraft Audio — Designed & Hand-Tested in East London</p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- SCRIPTS -->
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/shop.js" defer></script>
 </body>
 </html>
