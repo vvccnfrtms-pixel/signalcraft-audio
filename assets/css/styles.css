@@ -1,9 +1,22 @@
-/* BASE & BODY */
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  color: #222;
+  color: #fff;
   background-color: #1a1a1a; /* Dark/neutral background */
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* HEADER */
@@ -17,21 +30,109 @@ body {
   border-bottom: 1px solid #333;
 }
 
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .brand img.logo-img {
   height: 60px;
 }
 
-/* HERO */
+/* NAVIGATION */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: #FFD94B;
+}
+
+.main-nav .cta.btn {
+  background: #FFD94B;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    display: none;
+    background: #111;
+    position: absolute;
+    right: 1rem;
+    top: 70px;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #333;
+  }
+
+  .main-nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* HERO SECTION */
 .hero {
+  position: relative;
   background: url('assets/img/hero-bg.jpg') center/cover no-repeat;
   padding: 6rem 0;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* Dark overlay for contrast */
+  z-index: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
 }
 
 .hero .btn {
@@ -40,13 +141,45 @@ body {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 600;
+  text-decoration: none;
 }
 
-/* BODY CONTAINERS & SECTIONS */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+.hero-trust {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-trust .badge {
+  background: rgba(255, 217, 75, 0.9);
+  color: #222;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  gap: 2rem;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.features article {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
 }
 
 /* PRODUCTS GRID */
@@ -60,7 +193,7 @@ body {
 .card {
   background: #222;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   padding: 1rem;
   position: relative;
@@ -69,12 +202,23 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(255,255,255,0.1);
+  box-shadow: 0 6px 20px rgba(255,255,255,0.1);
 }
 
 .card img {
   width: 100%;
   border-radius: 4px;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 /* BADGES */
@@ -86,7 +230,85 @@ body {
   color: #222;
   padding: 0.3rem 0.6rem;
   font-weight: 600;
+  font-size: 0.75rem;
   border-radius: 4px;
+}
+
+.badge.coming-soon {
+  background: #FFC300;
+}
+
+.badge.limited {
+  background: #FFD94B;
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid #FFD94B;
+  padding: 0.5rem 1rem;
+  color: #FFD94B;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #FFD94B;
+  color: #222;
+}
+
+/* WHY SIGNALCRAFT */
+.build-for-profit {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.build-for-profit .trust-logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.build-for-profit .trust-logos img {
+  height: 50px;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.newsletter input[type="email"] {
+  padding: 0.75rem;
+  width: 250px;
+  max-width: 80%;
+  margin-right: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+}
+
+.newsletter input::placeholder {
+  color: #ccc;
+}
+
+.newsletter button {
+  padding: 0.75rem 1rem;
+  border: none;
+  background: #FFD94B;
+  color: #222;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background: #FFC300;
 }
 
 /* FOOTER */
@@ -100,4 +322,50 @@ body {
 .site-footer a {
   color: #FFD94B;
   text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+/* SOCIAL ICONS */
+.social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ANIMATED WAVE */
+.waveform {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .features {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inner {
+    text-align: center;
+  }
 }
