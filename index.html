@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SignalCraft Audio — Boutique Guitar Pedals</title>
   <meta name="description" content="SignalCraft Audio — boutique guitar effect pedals. Hand-tested in East London. Crafting Your Perfect Tone. Premium tone, limited runs." />
   <link rel="icon" href="assets/img/logo.png" />
@@ -25,7 +25,7 @@
           ☰
         </button>
         <ul class="nav-links">
-          <li><a href="products.html">Products</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a class="cta btn" href="shop.html">Shop</a></li>
@@ -36,25 +36,33 @@
 
   <!-- HERO -->
   <main>
-    <section class="hero">
+    <section class="hero" style="background: url('assets/img/hero-bg.jpg') center/cover no-repeat;">
       <div class="container hero-inner">
-        <h2 class="hero-slogan">Crafting Your Perfect Tone</h2>
+        <h1 class="hero-slogan">Crafting Your Perfect Tone</h1>
         <p class="hero-description">Hand-tested in East London, South Africa. Premium guitar pedals built for recording and stage. Limited runs. Global shipping.</p>
         <a class="btn" href="products.html">Shop Pedals</a>
+        <div class="hero-trust">
+          <span class="badge">Small-Batch</span>
+          <span class="badge">Artist Collaborations</span>
+          <span class="badge">Limited Edition</span>
+        </div>
       </div>
     </section>
 
     <!-- FEATURES -->
     <section class="features container">
       <article>
+        <img src="assets/img/icons/components.svg" alt="Premium Components Icon" class="feature-icon">
         <h3>Premium Components</h3>
-        <p>Quality parts sourced from industry standard manufacturers for stability and superior tone.</p>
+        <p>Quality parts sourced from industry-standard manufacturers for stability and superior tone.</p>
       </article>
       <article>
+        <img src="assets/img/icons/design.svg" alt="Designed in East London Icon" class="feature-icon">
         <h3>Designed In East London</h3>
         <p>Tone design and final testing performed locally — giving every pedal a human touch.</p>
       </article>
       <article>
+        <img src="assets/img/icons/shipping.svg" alt="Worldwide Shipping Icon" class="feature-icon">
         <h3>Worldwide Shipping</h3>
         <p>We ship internationally with tracked courier options and export-friendly packaging.</p>
       </article>
@@ -65,9 +73,22 @@
       <h2 id="products-heading">Featured Pedals</h2>
       <div id="featured-grid" class="grid">
         <div class="card">
-          <img src="assets/img/pedal3.jpg" alt="SignalCraft Overdrive Pedal" />
+          <img src="assets/img/pedal3.jpg" alt="SignalCraft Overdrive Pedal for professional guitarists" />
           <h4>Overdrive</h4>
+          <span class="badge limited">Limited Edition</span>
           <p>Natural tube-like overdrive that responds dynamically to your playing.</p>
+        </div>
+        <div class="card">
+          <img src="assets/img/pedal1.jpg" alt="SignalCraft Fuzz Pedal" />
+          <h4>Fuzz Distortion</h4>
+          <span class="badge coming-soon">Coming Soon</span>
+          <p>Rugged analog fuzz with boutique tone. Limited edition finish.</p>
+          <button class="btn-outline notify-btn">Notify Me</button>
+        </div>
+        <div class="card">
+          <img src="assets/img/pedal2.jpg" alt="SignalCraft Analog Delay Pedal" />
+          <h4>Analog Delay</h4>
+          <p>Warm, lush repeats with precise control for recording or live performance.</p>
         </div>
       </div>
       <div class="center">
@@ -75,27 +96,25 @@
       </div>
     </section>
 
-    <!-- PEDALS IN THE MAKING -->
-    <section class="products-preview container" aria-labelledby="in-progress-heading">
-      <h2 id="in-progress-heading">Pedals in the Making</h2>
-      <div id="in-progress-grid" class="grid">
-        <div class="card">
-          <img src="assets/img/pedal1.jpg" alt="SignalCraft Fuzz Pedal" />
-          <h4>Fuzz Distortion</h4>
-          <p>Rugged analog fuzz with boutique tone. Limited edition finish.</p>
-        </div>
-        <div class="card">
-          <img src="assets/img/pedal2.jpg" alt="SignalCraft Delay Pedal" />
-          <h4>Analog Delay</h4>
-          <p>Warm, lush repeats with precise control for recording or live performance.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- WHY SIGNALCRAFT -->
     <section class="build-for-profit container">
       <h2>Why SignalCraft Audio</h2>
       <p>Targeted at recording guitarists who pay for premium tone. Small-batch runs, artist collaborations, and limited edition finishes — high margin, desirable products.</p>
+      <div class="trust-logos">
+        <img src="assets/img/artist1.png" alt="Artist Collaboration Logo">
+        <img src="assets/img/artist2.png" alt="Artist Collaboration Logo">
+      </div>
+      <a class="btn" href="products.html">Explore Products</a>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter container">
+      <h2>Stay Updated</h2>
+      <p>Sign up for exclusive updates, new pedal releases, and early access to limited editions.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
     </section>
 
     <!-- ANIMATED WAVE -->
@@ -124,6 +143,11 @@
         <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
           <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
         </a>
+      </div>
+      <div class="footer-links">
+        <a href="products.html">Products</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
