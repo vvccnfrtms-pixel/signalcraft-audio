@@ -1,99 +1,66 @@
 // ==============================
-// DYNAMIC CURRENT YEAR
+// MENU TOGGLE FOR MOBILE
 // ==============================
-document.addEventListener("DOMContentLoaded", () => {
-  const yearSpan = document.getElementById("year");
-  const currentYear = new Date().getFullYear();
-  if (yearSpan) yearSpan.textContent = currentYear;
-});
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-// ==============================
-// MOBILE MENU TOGGLE
-// ==============================
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".main-nav ul");
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-}
-
-// ==============================
-// SMOOTH SCROLL FOR INTERNAL LINKS
-// ==============================
-const smoothLinks = document.querySelectorAll('a[href^="#"]');
-smoothLinks.forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
 });
 
 // ==============================
 // FADE-IN ON SCROLL
 // ==============================
-const fadeElements = document.querySelectorAll(".fade-in, .hero, .features article, .products-preview .card, .build-for-profit, .newsletter");
+const faders = document.querySelectorAll('.fade-in');
 
-const observerOptions = {
-  threshold: 0.1
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
 };
 
-const fadeObserver = new IntersectionObserver((entries, observer) => {
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    appearOnScroll.unobserve(entry.target);
   });
-}, observerOptions);
+}, appearOptions);
 
-fadeElements.forEach(el => fadeObserver.observe(el));
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
 // ==============================
-// ANIMATED SVG WAVE
+// DYNAMIC YEAR IN FOOTER
 // ==============================
-const wave = document.getElementById("wave-low");
-const wavePoints = 50;
-let waveArray = [];
-
-function createWave() {
-  waveArray = [];
-  for (let i = 0; i <= wavePoints; i++) {
-    waveArray.push({
-      x: (i / wavePoints) * 1000,
-      y: 60 + Math.sin(i * 0.5) * 20
-    });
-  }
-  updateWave();
+const yearSpan = document.getElementById('year');
+if(yearSpan){
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
 }
 
-function updateWave() {
-  const polylinePoints = waveArray.map(p => `${p.x},${p.y}`).join(" ");
-  wave.setAttribute("points", polylinePoints);
+// ==============================
+// SVG WAVE ANIMATION
+// ==============================
+const wave = document.getElementById('wave-low');
+
+function generateWave(){
+  if(!wave) return;
+  const points = [];
+  const width = 1000;
+  const height = 60;
+  const amplitude = 20;
+  const frequency = 0.02;
+  for(let x = 0; x <= width; x+=10){
+    const y = height + Math.sin(x * frequency + Date.now() * 0.002) * amplitude;
+    points.push(`${x},${y}`);
+  }
+  wave.setAttribute('points', points.join(' '));
 }
 
-function animateWave() {
-  for (let i = 0; i <= wavePoints; i++) {
-    waveArray[i].y = 60 + Math.sin(Date.now() * 0.002 + i * 0.5) * 20;
-  }
-  updateWave();
+function animateWave(){
+  generateWave();
   requestAnimationFrame(animateWave);
 }
 
-// Initialize wave
-if(wave) {
-  createWave();
-  animateWave();
-}
-
-// ==============================
-// HERO FADE-IN ANIMATION INIT
-// ==============================
-const hero = document.querySelector(".hero-inner");
-if(hero) {
-  hero.classList.add("fade-in");
-}
+animateWave();
