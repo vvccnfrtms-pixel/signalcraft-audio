@@ -3,42 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — SignalCraft Audio</title>
-  <meta name="description" content="Get in touch with SignalCraft Audio for support, orders, or collaborations." />
+  <title>SignalCraft Audio — Contact</title>
+  <meta name="description" content="Contact SignalCraft Audio boutique guitar pedals. Hand-tested in East London. Get in touch with us for inquiries or support." />
+  <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="assets/img/logo.png" alt="SignalCraft Audio Logo"></a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img">
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a class="cta btn" href="shop.html">Shop</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="shop.html" class="shop-link">Shop</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <section class="contact">
-    <h1>Contact Us</h1>
-    <p>Have a question about our pedals or want to collaborate? We’d love to hear from you.</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h1 class="hero-slogan">Get in Touch</h1>
+        <p class="hero-description">Have a question about our boutique pedals or need support? Fill out the form below or reach us directly via email or social media.</p>
+      </div>
+    </section>
 
-  <footer>
-    <p>SignalCraft Audio — Designed & Hand-Tested in East London</p>
+    <!-- CONTACT FORM -->
+    <section class="container fade-in" id="contact-form">
+      <h2>Contact Us</h2>
+      <form action="#" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message" rows="6" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <!-- CONTACT INFO -->
+    <section class="container fade-in" id="contact-info">
+      <h2>Our Details</h2>
+      <p>Email: <a href="mailto:info@signalcraftaudio.com">info@signalcraftaudio.com</a></p>
+      <p>Location: East London, South Africa</p>
+      <div class="social">
+        <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ANIMATED WAVE -->
+    <section class="bottom-wave">
+      <svg id="logo-wave-svg" class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#FFD94B"/>
+            <stop offset="50%" stop-color="#FFC300"/>
+            <stop offset="100%" stop-color="#FFD94B"/>
+          </linearGradient>
+        </defs>
+        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
+      </svg>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> SignalCraft Audio — Designed & hand-tested in East London, South Africa.</small>
+      <div class="social">
+        <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="products.html">Products</a> |
+        <a href="about.html">About</a>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- SCRIPTS -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
