@@ -38,26 +38,49 @@
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <h1 class="hero-slogan">Crafting Your Perfect Tone</h1>
-        <p class="hero-description">SignalCraft Audio builds hand-tested boutique guitar pedals for discerning musicians. Designed and crafted in East London, South Africa.</p>
+        <p class="hero-description">Boutique guitar pedals, hand-tested in East London. Limited runs with premium sound for musicians worldwide.</p>
       </div>
     </section>
 
-    <!-- FEATURE SECTION -->
-    <section class="container fade-in">
-      <h2>Why Choose SignalCraft</h2>
-      <div class="features">
-        <article>
-          <h3>Hand-Tested Quality</h3>
-          <p>Every pedal is assembled, tuned, and tested by hand to ensure premium tone and reliable performance.</p>
-        </article>
-        <article>
-          <h3>Limited Runs</h3>
-          <p>Each model is built in small batches, maintaining exclusivity and meticulous craftsmanship.</p>
-        </article>
-        <article>
-          <h3>Inspired Design</h3>
-          <p>Combining analog expertise with modern aesthetics for musicians who value both sound and style.</p>
-        </article>
+    <!-- FEATURES -->
+    <section class="features container fade-in">
+      <article>
+        <h3>Premium Analog Tone</h3>
+        <p>Every pedal is designed and tested to provide unmatched analog clarity and warmth.</p>
+      </article>
+      <article>
+        <h3>Small-Batch Craftsmanship</h3>
+        <p>We produce limited runs to ensure quality, uniqueness, and attention to detail in every pedal.</p>
+      </article>
+      <article>
+        <h3>Designed for Musicians</h3>
+        <p>We collaborate with professional artists to create pedals that inspire performance in any setting.</p>
+      </article>
+    </section>
+
+    <!-- PRODUCT PREVIEW GRID -->
+    <section class="products-preview container fade-in" aria-labelledby="products-heading">
+      <h2 id="products-heading">Featured Pedals</h2>
+      <div class="grid" id="products-grid">
+        <div class="card fade-in">
+          <img src="assets/img/pedal1.jpg" alt="SignalCraft Fuzz Pedal">
+          <h4>Fuzz Distortion</h4>
+          <span class="badge coming-soon">Coming Soon</span>
+          <p>Rugged analog fuzz with boutique tone. Limited edition finish.</p>
+          <button class="notify-btn btn-outline">Notify Me</button>
+        </div>
+        <div class="card fade-in">
+          <img src="assets/img/pedal2.jpg" alt="SignalCraft Delay Pedal">
+          <h4>Analog Delay</h4>
+          <p>Warm, lush repeats with precise control for recording or live performance.</p>
+          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
+        </div>
+        <div class="card fade-in">
+          <img src="assets/img/pedal3.jpg" alt="SignalCraft Overdrive Pedal">
+          <h4>Overdrive</h4>
+          <p>Natural tube-like overdrive that responds dynamically to your playing.</p>
+          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
+        </div>
       </div>
     </section>
 
@@ -89,6 +112,7 @@
         </a>
       </div>
       <div class="footer-links">
+        <a href="index.html" class="active">Home</a> |
         <a href="products.html">Products</a> |
         <a href="about.html">About</a> |
         <a href="contact.html">Contact</a>
@@ -98,26 +122,19 @@
 
   <!-- SCRIPTS -->
   <script>
-    // YEAR
+    // Year auto-update
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ==============================
-    // RESPONSIVE NAVIGATION FIX
-    // ==============================
+    // Responsive hamburger menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-
-    // ensure starts hidden
-    navLinks.classList.remove('open');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    // close menu when a link is clicked (mobile UX)
+    navLinks.classList.remove('open'); 
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   </script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/shop.js" defer></script>
 </body>
 </html>
