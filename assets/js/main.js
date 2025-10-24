@@ -1,67 +1,56 @@
-// assets/js/main.js
-// Handles menu toggle, close-on-link, resize, fade-in observer, year, contact form fallback
+// ==============================
+// NAVIGATION HAMBURGER
+// ==============================
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
 
-  if (menuToggle && navLinks) {
-    navLinks.classList.remove('show');
+// ==============================
+// FADE-IN ANIMATION
+// ==============================
+const faders = document.querySelectorAll('.fade-in');
 
-    menuToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      navLinks.classList.toggle('show');
-      const expanded = navLinks.classList.contains('show');
-      menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    });
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -50px 0px"
+};
 
-    navLinks.addEventListener('click', function (e) {
-      const t = e.target;
-      if (t && t.tagName === 'A') {
-        navLinks.classList.remove('show');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 768) {
-        navLinks.classList.remove('show');
-        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // year
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // fade-in
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-
-  // contact
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thanks — we got your message. We will respond shortly.');
-      contactForm.reset();
-    });
-  }
-
-  // accessibility: Escape closes menu
-  document.addEventListener('keyup', (e) => {
-    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('show')) {
-      navLinks.classList.remove('show');
-      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting){
+      return;
+    } else {
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
     }
   });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
+
+// ==============================
+// WAVE ANIMATION (Simple Moving Polyline)
+// ==============================
+const wave = document.querySelector('#logo-wave-svg polyline');
+if(wave){
+  let wavePoints = wave.getAttribute('points').split(' ').map(p => p.split(',').map(Number));
+  function animateWave(){
+    wavePoints = wavePoints.map(([x,y]) => [x, y + Math.sin(Date.now() * 0.002 + x*0.01)*2]);
+    wave.setAttribute('points', wavePoints.map(p => p.join(',')).join(' '));
+    requestAnimationFrame(animateWave);
+  }
+  animateWave();
+}
+
+// ==============================
+// SET CURRENT YEAR
+// ==============================
+document.getElementById('year').textContent = new Date().getFullYear();
