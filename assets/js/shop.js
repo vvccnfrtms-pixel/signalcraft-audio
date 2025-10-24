@@ -1,10 +1,7 @@
-// assets/js/shop.js
-// Minimal helpers for product pages (add to cart / notify buttons) — non-blocking if absent
-
+// assets/js/shop.js - small behavior helpers
 document.addEventListener('DOMContentLoaded', function () {
-  // Add-to-cart button demo handler
   document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       btn.textContent = 'Added';
       btn.classList.remove('btn-outline');
@@ -13,20 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.textContent = 'Add to Cart';
         btn.classList.remove('btn');
         btn.classList.add('btn-outline');
-      }, 1300);
+      }, 1200);
     });
   });
 
-  // Notify me
   document.querySelectorAll('.notify-btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       btn.textContent = 'Noted';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = 'Notify Me';
         btn.disabled = false;
-      }, 1500);
+      }, 1300);
     });
   });
 });
