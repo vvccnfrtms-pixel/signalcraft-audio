@@ -1,138 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SignalCraft Audio — Boutique Guitar Pedals</title>
-  <meta name="description" content="SignalCraft Audio — boutique guitar effect pedals. Hand-tested in East London. Crafting Your Perfect Tone. Premium tone, limited runs." />
-  <link rel="icon" href="assets/img/logo-full.png" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
 <body>
-  <!-- HEADER -->
+  
+  <!-- ==============================
+       HEADER WITH HAMBURGER FIX
+       ============================== -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner container">
+      <!-- Brand / Logo -->
       <div class="brand">
         <a href="index.html">
-          <img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img">
+          <img src="assets/img/logo.svg" alt="SignalCraft Audio Logo" class="logo-img">
         </a>
       </div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <!-- Hamburger Menu Button -->
+      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+
+      <!-- Navigation -->
+      <nav class="main-nav">
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="cta btn" href="shop.html">Shop</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <h1 class="hero-slogan">Crafting Your Perfect Tone</h1>
-        <p class="hero-description">Hand-tested in East London, South Africa. Premium guitar pedals built for recording and stage. Limited runs. Global shipping.</p>
-        <a class="btn" href="products.html">Shop Pedals</a>
-      </div>
-    </section>
+  <!-- ==============================
+       HERO SECTION
+       ============================== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1 class="hero-slogan">Craft Your Perfect Tone</h1>
+      <p class="hero-description">Hand-tested boutique pedals designed to elevate your sound. Limited runs, premium quality.</p>
+    </div>
+  </section>
 
-    <!-- FEATURES -->
-    <section class="features container fade-in">
-      <article>
-        <h3>Premium Components</h3>
-        <p>Quality parts sourced from industry standard manufacturers for stability and superior tone.</p>
-      </article>
-      <article>
-        <h3>Designed In East London</h3>
-        <p>Tone design and final testing performed locally — giving every pedal a human touch.</p>
-      </article>
-      <article>
-        <h3>Worldwide Shipping</h3>
-        <p>We ship internationally with tracked courier options and export-friendly packaging.</p>
-      </article>
-    </section>
+  <!-- ==============================
+       FEATURES SECTION
+       ============================== -->
+  <section class="features container">
+    <article>
+      <h3>Precision Crafting</h3>
+      <p>Every pedal is hand-assembled and rigorously tested for flawless performance.</p>
+    </article>
+    <article>
+      <h3>Unique Designs</h3>
+      <p>Exclusive pedal circuits designed for tonal versatility and creativity.</p>
+    </article>
+    <article>
+      <h3>Limited Runs</h3>
+      <p>Small-batch production ensures each pedal is special and collectible.</p>
+    </article>
+  </section>
 
-    <!-- FEATURED PEDALS -->
-    <section class="products-preview container fade-in" aria-labelledby="products-heading">
-      <h2 id="products-heading">Featured Pedals</h2>
-      <div id="featured-grid" class="grid">
-        <div class="card fade-in">
-          <img src="assets/img/pedal3.jpg" alt="SignalCraft Overdrive Pedal" />
-          <h4>Overdrive</h4>
-          <p>Natural tube-like overdrive that responds dynamically to your playing.</p>
-          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
-        </div>
-      </div>
-      <div class="center">
-        <a class="btn-outline" href="products.html">View All Products</a>
-      </div>
-    </section>
+  <!-- ==============================
+       PRODUCT GRID
+       ============================== -->
+  <section class="grid container">
+    <div class="card">
+      <img src="assets/img/pedal1.jpg" alt="Pedal 1">
+      <h4>Overdrive Classic</h4>
+      <p>Warm, vintage-style overdrive perfect for blues and rock tones.</p>
+      <span class="badge">New</span>
+    </div>
+    <div class="card">
+      <img src="assets/img/pedal2.jpg" alt="Pedal 2">
+      <h4>Fuzz Monster</h4>
+      <p>Aggressive fuzz with smooth sustain, ideal for experimental sounds.</p>
+    </div>
+    <div class="card">
+      <img src="assets/img/pedal3.jpg" alt="Pedal 3">
+      <h4>Delay Echo</h4>
+      <p>Crystal-clear repeats with modulation options for depth and texture.</p>
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+  </section>
 
-    <!-- PEDALS IN THE MAKING -->
-    <section class="products-preview container fade-in" aria-labelledby="in-progress-heading">
-      <h2 id="in-progress-heading">Pedals in the Making</h2>
-      <div id="in-progress-grid" class="grid">
-        <div class="card fade-in">
-          <img src="assets/img/pedal1.jpg" alt="SignalCraft Fuzz Pedal" />
-          <h4>Fuzz Distortion</h4>
-          <span class="badge coming-soon">Coming Soon</span>
-          <p>Rugged analog fuzz with boutique tone. Limited edition finish.</p>
-          <button class="notify-btn btn-outline">Notify Me</button>
-        </div>
-        <div class="card fade-in">
-          <img src="assets/img/pedal2.jpg" alt="SignalCraft Delay Pedal" />
-          <h4>Analog Delay</h4>
-          <p>Warm, lush repeats with precise control for recording or live performance.</p>
-          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY SIGNALCRAFT -->
-    <section class="build-for-profit container fade-in">
-      <h2>Why SignalCraft Audio</h2>
-      <p>Targeted at recording guitarists who pay for premium tone. Small-batch runs, artist collaborations, and limited edition finishes — high margin, desirable products.</p>
-    </section>
-
-    <!-- ANIMATED WAVE -->
-    <section class="bottom-wave">
-      <svg id="logo-wave-svg" class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#FFD94B"/>
-            <stop offset="50%" stop-color="#FFC300"/>
-            <stop offset="100%" stop-color="#FFD94B"/>
-          </linearGradient>
-        </defs>
-        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
-      </svg>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
+  <!-- ==============================
+       FOOTER
+       ============================== -->
   <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> SignalCraft Audio — Designed & hand-tested in East London, South Africa.</small>
-      <div class="social">
-        <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-        </a>
-        <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
-        </a>
-      </div>
+    <small>&copy; 2025 SignalCraft Audio</small>
+    <div class="social">
+      <a href="#" class="social-icon">[SVG Icon]</a>
+      <a href="#" class="social-icon">[SVG Icon]</a>
+      <a href="#" class="social-icon">[SVG Icon]</a>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>|
+      <a href="products.html">Products</a>|
+      <a href="about.html">About</a>|
+      <a href="contact.html">Contact</a>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/shop.js" defer></script>
+  <!-- ==============================
+       MAIN JS
+       ============================== -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- ==============================
+       HAMBURGER MENU TOGGLE
+       ============================== -->
+  <script>
+    // Select elements
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Toggle menu on hamburger click
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Close menu automatically when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
+
 </body>
 </html>
