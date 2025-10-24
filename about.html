@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SignalCraft Audio — About</title>
-  <meta name="description" content="Learn more about SignalCraft Audio — boutique guitar pedals crafted for musicians who demand premium tone and quality." />
+  <meta name="description" content="Learn about SignalCraft Audio — boutique guitar pedals, hand-crafted and tested in East London." />
   <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -38,55 +38,30 @@
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <h1 class="hero-slogan">About SignalCraft Audio</h1>
-        <p class="hero-description">We craft boutique pedals that blend analog warmth with precision engineering — designed and tested by musicians, for musicians.</p>
+        <p class="hero-description">Crafting tone with precision, passion, and patience.</p>
       </div>
     </section>
 
-    <!-- OUR STORY -->
+    <!-- ABOUT CONTENT -->
     <section class="container fade-in">
       <h2>Our Story</h2>
-      <p>SignalCraft Audio was founded by musicians and engineers who share a deep love for tone. We wanted pedals that respond to touch and dynamics like instruments — not just effects. From our East London workshop, every pedal is hand-tested and built to inspire creativity.</p>
-    </section>
+      <p>
+        SignalCraft Audio began with a simple goal — to create instruments of tone that inspire musicians.
+        Every pedal is built and hand-tested in East London, South Africa, using carefully selected components
+        and meticulous attention to sonic detail.
+      </p>
 
-    <!-- OUR PHILOSOPHY -->
-    <section class="container fade-in">
-      <h2>Our Philosophy</h2>
-      <div class="features">
-        <article>
-          <h3>Hand-Tested Quality</h3>
-          <p>Each unit is built, wired, and tested by hand to ensure sonic perfection and reliability.</p>
-        </article>
-        <article>
-          <h3>Small-Batch Craft</h3>
-          <p>We believe in limited production — not mass manufacturing — to ensure each pedal is unique and personal.</p>
-        </article>
-        <article>
-          <h3>Musician Collaboration</h3>
-          <p>From concept to testing, we collaborate with artists to craft sounds that elevate their music.</p>
-        </article>
-      </div>
-    </section>
+      <h2>Philosophy</h2>
+      <p>
+        We believe in fewer, better pedals — devices that become part of your sound and last a lifetime.
+        From clean boosts to fuzz circuits, each unit reflects our commitment to craftsmanship and character.
+      </p>
 
-    <!-- MEET THE TEAM -->
-    <section class="container fade-in">
-      <h2>Meet the Team</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="assets/img/team1.jpg" alt="Founder - Dawie Olivier">
-          <h4>Dawie Olivier</h4>
-          <p>Founder & Lead Designer — devoted to capturing the nuances of analog tone in every pedal.</p>
-        </div>
-        <div class="card">
-          <img src="assets/img/team2.jpg" alt="Engineer - Jane Smith">
-          <h4>Jane Smith</h4>
-          <p>Electronics Engineer — specializing in circuit design, analog filters, and clean power architecture.</p>
-        </div>
-        <div class="card">
-          <img src="assets/img/team3.jpg" alt="Marketing - Tom Brown">
-          <h4>Tom Brown</h4>
-          <p>Community & Marketing — bringing the SignalCraft story to players across the globe.</p>
-        </div>
-      </div>
+      <h2>Craftsmanship</h2>
+      <p>
+        All enclosures are powder-coated locally, circuits are point-to-point wired, and every pedal undergoes
+        rigorous audio testing before it leaves our bench. Your tone deserves nothing less.
+      </p>
     </section>
 
     <!-- ANIMATED WAVE -->
@@ -119,28 +94,18 @@
       <div class="footer-links">
         <a href="index.html">Home</a> |
         <a href="products.html">Products</a> |
-        <a href="contact.html">Contact</a>
+        <a href="about.html" class="active">About</a>
       </div>
     </div>
   </footer>
 
   <!-- SCRIPTS -->
   <script>
-    // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ==============================
-    // RESPONSIVE NAVIGATION FIX
-    // ==============================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-
     navLinks.classList.remove('open');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
