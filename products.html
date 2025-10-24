@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SignalCraft Audio — Products</title>
-  <meta name="description" content="Explore the full range of SignalCraft Audio boutique guitar pedals. Hand-tested in East London. Premium tone, limited runs." />
+  <meta name="description" content="Explore our range of boutique guitar pedals, hand-built and tested in East London, South Africa. Premium tone. Limited runs." />
   <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -37,39 +37,29 @@
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
-        <h1 class="hero-slogan">Our Pedals</h1>
-        <p class="hero-description">Explore our boutique guitar pedals, hand-tested for premium tone and performance. Limited runs, small-batch craftsmanship, and worldwide shipping.</p>
+        <h1 class="hero-slogan">Boutique Pedals. Pure Tone.</h1>
+        <p class="hero-description">Explore our hand-built range of pedals designed for musicians who demand exceptional tone and craftsmanship.</p>
       </div>
     </section>
 
-    <!-- ALL PRODUCTS GRID -->
-    <section class="products-preview container fade-in" aria-labelledby="products-heading">
-      <h2 id="products-heading">All Products</h2>
-      <div class="grid" id="products-grid">
-        <div class="card fade-in">
-          <img src="assets/img/pedal1.jpg" alt="SignalCraft Fuzz Pedal">
-          <h4>Fuzz Distortion</h4>
-          <span class="badge coming-soon">Coming Soon</span>
-          <p>Rugged analog fuzz with boutique tone. Limited edition finish.</p>
-          <button class="notify-btn btn-outline">Notify Me</button>
+    <!-- PRODUCT GRID -->
+    <section class="container fade-in">
+      <h2>Our Pedals</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/img/product1.jpg" alt="SignalCraft Drive Pedal">
+          <h4>Overdrive Classic</h4>
+          <p>Warm, dynamic, and transparent. Designed for expressive playing and amp-like response.</p>
         </div>
-        <div class="card fade-in">
-          <img src="assets/img/pedal2.jpg" alt="SignalCraft Delay Pedal">
-          <h4>Analog Delay</h4>
-          <p>Warm, lush repeats with precise control for recording or live performance.</p>
-          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
+        <div class="card">
+          <img src="assets/img/product2.jpg" alt="SignalCraft Delay Pedal">
+          <h4>Echo Machine</h4>
+          <p>Analog-style delay with modern control. Lush repeats that sit perfectly in any mix.</p>
         </div>
-        <div class="card fade-in">
-          <img src="assets/img/pedal3.jpg" alt="SignalCraft Overdrive Pedal">
-          <h4>Overdrive</h4>
-          <p>Natural tube-like overdrive that responds dynamically to your playing.</p>
-          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
-        </div>
-        <div class="card fade-in">
-          <img src="assets/img/pedal4.jpg" alt="SignalCraft Modulation Pedal">
-          <h4>Chorus & Modulation</h4>
-          <p>Rich analog modulation effects for studio and stage performance.</p>
-          <button class="add-to-cart-btn btn-outline">Add to Cart</button>
+        <div class="card">
+          <img src="assets/img/product3.jpg" alt="SignalCraft Modulation Pedal">
+          <h4>Phase Shift Deluxe</h4>
+          <p>Rich, sweeping textures and a vintage analog feel. A studio-quality modulation effect.</p>
         </div>
       </div>
     </section>
@@ -110,24 +100,25 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/shop.js" defer></script>
-
-  <!-- HAMBURGER MENU TOGGLE -->
   <script>
+    // YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ==============================
+    // RESPONSIVE NAVIGATION FIX
+    // ==============================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
+    navLinks.classList.remove('open');
+
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+      navLinks.classList.toggle('open');
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-      });
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   </script>
-
 </body>
 </html>
