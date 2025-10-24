@@ -1,31 +1,32 @@
-// ==============================
-// ADD TO CART BUTTONS
-// ==============================
-const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+// assets/js/shop.js
+// Minimal helpers for product pages (add to cart / notify buttons) — non-blocking if absent
 
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-    const productName = card.querySelector('h4').textContent;
-    alert(`${productName} has been added to your cart!`);
-    // Future: integrate with actual cart system here
+document.addEventListener('DOMContentLoaded', function () {
+  // Add-to-cart button demo handler
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      btn.textContent = 'Added';
+      btn.classList.remove('btn-outline');
+      btn.classList.add('btn');
+      setTimeout(() => {
+        btn.textContent = 'Add to Cart';
+        btn.classList.remove('btn');
+        btn.classList.add('btn-outline');
+      }, 1300);
+    });
   });
-});
 
-// ==============================
-// NOTIFY ME BUTTONS
-// ==============================
-const notifyButtons = document.querySelectorAll('.notify-btn');
-
-notifyButtons.forEach(button => {
-  button.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-    const productName = card.querySelector('h4').textContent;
-    const userEmail = prompt(`Enter your email to be notified when ${productName} is available:`);
-
-    if(userEmail){
-      alert(`Thanks! We'll notify you at ${userEmail} when ${productName} is available.`);
-      // Future: send this email to backend or newsletter system
-    }
+  // Notify me
+  document.querySelectorAll('.notify-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      btn.textContent = 'Noted';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Notify Me';
+        btn.disabled = false;
+      }, 1500);
+    });
   });
 });
