@@ -56,9 +56,7 @@ img {
   width: auto;
 }
 
-/* ==============================
-   NAVIGATION
-   ============================== */
+/* NAVIGATION */
 .main-nav {
   position: relative;
 }
@@ -72,7 +70,7 @@ img {
 .main-nav .nav-links li a {
   padding: 8px 12px;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s;
 }
 
 .main-nav .nav-links li a:hover,
@@ -88,16 +86,9 @@ img {
   background: none;
   border: none;
   color: #FFD94B;
-  transition: all 0.3s ease;
 }
 
-.menu-toggle:hover {
-  color: #FFC300;
-}
-
-/* ==============================
-   BUTTONS
-   ============================== */
+/* CTA BUTTONS */
 .btn, .btn-outline {
   padding: 10px 20px;
   border-radius: 4px;
@@ -137,8 +128,17 @@ img {
   justify-content: center;
   text-align: center;
   min-height: 60vh;
-  background: url('../img/hero-bg.jpeg') center/cover no-repeat;
+  background: url('../img/hero-bg.jpeg') center center / cover no-repeat;
+  background-size: cover;
+  background-position: center;
   margin-bottom: 40px;
+  overflow: hidden; /* prevent overflow of background image */
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-overlay {
@@ -153,6 +153,7 @@ img {
   position: relative;
   z-index: 1;
   color: #FFD94B;
+  padding: 0 20px;
 }
 
 .hero-slogan {
@@ -182,11 +183,12 @@ img {
   background-color: #111;
   padding: 20px;
   border-radius: 6px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .features article:hover {
   transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(255, 217, 75, 0.3);
 }
 
 .features h3 {
@@ -378,14 +380,13 @@ img {
   }
 
   .nav-links {
-    display: none; /* hide menu by default */
     position: absolute;
     top: 100%;
     right: 0;
     background-color: #111;
     flex-direction: column;
     width: 200px;
-    padding: 10px 0;
+    display: none; /* hide by default */
     z-index: 1000;
   }
 
@@ -407,5 +408,10 @@ img {
 
   .hero-description {
     font-size: 1rem;
+  }
+
+  .hero img {
+    max-width: 100%;
+    height: auto;
   }
 }
