@@ -1,66 +1,100 @@
-// ==============================
-// MENU TOGGLE FOR MOBILE
-// ==============================
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+// assets/js/main.js
+// Handles: menu toggle, close-on-link, resize behavior, fade-in observer, wave animation, year setter, footer behaviours, contact form fallback
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
+document.addEventListener('DOMContentLoaded', function () {
+  // Elements
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-// ==============================
-// FADE-IN ON SCROLL
-// ==============================
-const faders = document.querySelectorAll('.fade-in');
+  // Defensive checks
+  if (menuToggle && navLinks) {
+    // ensure closed on load
+    navLinks.classList.remove('show');
 
-const appearOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
-};
+    // toggle
+    menuToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      navLinks.classList.toggle('show');
+      const state = navLinks.classList.contains('show') ? 'true' : 'false';
+      menuToggle.setAttribute('aria-expanded', state);
+    });
 
-const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
+    // close when clicking a nav item
+    navLinks.addEventListener('click', function (e) {
+      const t = e.target;
+      if (t && t.tagName === 'A') {
+        navLinks.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
-// ==============================
-// DYNAMIC YEAR IN FOOTER
-// ==============================
-const yearSpan = document.getElementById('year');
-if(yearSpan){
-  const currentYear = new Date().getFullYear();
-  yearSpan.textContent = currentYear;
-}
-
-// ==============================
-// SVG WAVE ANIMATION
-// ==============================
-const wave = document.getElementById('wave-low');
-
-function generateWave(){
-  if(!wave) return;
-  const points = [];
-  const width = 1000;
-  const height = 60;
-  const amplitude = 20;
-  const frequency = 0.02;
-  for(let x = 0; x <= width; x+=10){
-    const y = height + Math.sin(x * frequency + Date.now() * 0.002) * amplitude;
-    points.push(`${x},${y}`);
+    // close if resizing to desktop
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
-  wave.setAttribute('points', points.join(' '));
-}
 
-function animateWave(){
-  generateWave();
-  requestAnimationFrame(animateWave);
-}
+  // Year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-animateWave();
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Wave animation — animate polyline points with a simple loop
+  (function animateWave() {
+    const poly = document.getElementById('wave-low');
+    if (!poly) return;
+    const width = 1000;
+    const height = 80;
+    function makePoints(offset) {
+      const points = [];
+      const segments = 32;
+      for (let i = 0; i <= segments; i++) {
+        const x = (i / segments) * width;
+        const theta = (i / segments) * Math.PI * 2 + offset;
+        const y = height/2 + Math.sin(theta) * 18 * Math.sin(offset/2 + i/8);
+        points.push(`${(x).toFixed(2)},${(y).toFixed(2)}`);
+      }
+      return points.join(' ');
+    }
+    let t = 0;
+    function frame() {
+      if (poly) poly.setAttribute('points', makePoints(t));
+      t += 0.02;
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
+
+  // Contact form simulated submission if present
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // simple success animation
+      alert('Thank you — your message has been received. We will respond shortly.');
+      contactForm.reset();
+    });
+  }
+
+  // small accessibility: close nav on Escape
+  document.addEventListener('keyup', function (e) {
+    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show');
+      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
