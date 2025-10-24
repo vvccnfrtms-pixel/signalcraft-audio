@@ -119,7 +119,7 @@ img {
 }
 
 /* ==============================
-   HERO SECTION
+   HERO SECTION (Euro background)
    ============================== */
 .hero {
   position: relative;
@@ -128,17 +128,11 @@ img {
   justify-content: center;
   text-align: center;
   min-height: 60vh;
-  background: url('../img/hero-bg.jpeg') center center / cover no-repeat;
-  background-size: cover;
+  background-image: url('../img/euro.jpg'); /* Euro image */
+  background-size: contain;   /* makes image fit inside hero */
+  background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 40px;
-  overflow: hidden; /* prevent overflow of background image */
-}
-
-.hero img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 .hero-overlay {
@@ -147,13 +141,13 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(10,10,10,0.65);
+  z-index: 1;
 }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   color: #FFD94B;
-  padding: 0 20px;
 }
 
 .hero-slogan {
@@ -183,12 +177,11 @@ img {
   background-color: #111;
   padding: 20px;
   border-radius: 6px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .features article:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(255, 217, 75, 0.3);
 }
 
 .features h3 {
@@ -386,8 +379,7 @@ img {
     background-color: #111;
     flex-direction: column;
     width: 200px;
-    display: none; /* hide by default */
-    z-index: 1000;
+    display: none;
   }
 
   .nav-links.show {
@@ -408,10 +400,5 @@ img {
 
   .hero-description {
     font-size: 1rem;
-  }
-
-  .hero img {
-    max-width: 100%;
-    height: auto;
   }
 }
