@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SignalCraft Audio — Products</title>
-  <meta name="description" content="Explore our range of boutique guitar pedals, hand-built and tested in East London, South Africa. Premium tone. Limited runs." />
+  <meta name="description" content="Explore SignalCraft Audio’s boutique range of hand-built guitar pedals — precision-crafted tone tools for musicians." />
   <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -37,29 +37,36 @@
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
-        <h1 class="hero-slogan">Boutique Pedals. Pure Tone.</h1>
-        <p class="hero-description">Explore our hand-built range of pedals designed for musicians who demand exceptional tone and craftsmanship.</p>
+        <h1 class="hero-slogan">Explore Our Pedals</h1>
+        <p class="hero-description">Boutique analog tone machines — designed, hand-soldered, and tested in East London.</p>
       </div>
     </section>
 
-    <!-- PRODUCT GRID -->
+    <!-- PRODUCTS GRID -->
     <section class="container fade-in">
-      <h2>Our Pedals</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="assets/img/product1.jpg" alt="SignalCraft Drive Pedal">
-          <h4>Overdrive Classic</h4>
-          <p>Warm, dynamic, and transparent. Designed for expressive playing and amp-like response.</p>
+      <h2>Our Boutique Pedal Line</h2>
+      <p>Each SignalCraft pedal is built in limited batches to ensure premium sound and craftsmanship. Below are our current models.</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/img/pedal1.jpg" alt="SignalCraft Overdrive" class="product-img">
+          <h3>SignalCraft Overdrive</h3>
+          <p>A dynamic overdrive with natural amp-like breakup. Perfect for classic rock tones.</p>
+          <a href="shop.html" class="btn">View Details</a>
         </div>
-        <div class="card">
-          <img src="assets/img/product2.jpg" alt="SignalCraft Delay Pedal">
-          <h4>Echo Machine</h4>
-          <p>Analog-style delay with modern control. Lush repeats that sit perfectly in any mix.</p>
+
+        <div class="product-card">
+          <img src="assets/img/pedal2.jpg" alt="SignalCraft Delay" class="product-img">
+          <h3>SignalCraft Delay</h3>
+          <p>Warm analog-style delay with adjustable repeats, tone filter, and tap tempo.</p>
+          <a href="shop.html" class="btn">View Details</a>
         </div>
-        <div class="card">
-          <img src="assets/img/product3.jpg" alt="SignalCraft Modulation Pedal">
-          <h4>Phase Shift Deluxe</h4>
-          <p>Rich, sweeping textures and a vintage analog feel. A studio-quality modulation effect.</p>
+
+        <div class="product-card">
+          <img src="assets/img/pedal3.jpg" alt="SignalCraft Fuzz" class="product-img">
+          <h3>SignalCraft Fuzz</h3>
+          <p>Vintage fuzz with rich harmonic character and responsive cleanup via your guitar’s volume knob.</p>
+          <a href="shop.html" class="btn">View Details</a>
         </div>
       </div>
     </section>
@@ -93,29 +100,19 @@
       </div>
       <div class="footer-links">
         <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact</a>
+        <a href="products.html" class="active">Products</a> |
+        <a href="about.html">About</a>
       </div>
     </div>
   </footer>
 
   <!-- SCRIPTS -->
   <script>
-    // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ==============================
-    // RESPONSIVE NAVIGATION FIX
-    // ==============================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-
     navLinks.classList.remove('open');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
