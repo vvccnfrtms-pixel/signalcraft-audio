@@ -1,5 +1,5 @@
 /* assets/css/styles.css
-   Full site styles — dark theme, subtle glow, responsive header + hamburger,
+   Dark theme, subtle glow, responsive header + hamburger,
    hero, cards, footer, wave animation, fade-in animations.
 */
 
@@ -95,8 +95,6 @@ button { font: inherit; }
   position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center;
   text-align:center; margin-bottom:40px;
   background-position:center; background-size:cover; background-repeat:no-repeat;
-  /* fallback background color */
-  background-color: linear-gradient(180deg, #0a0a0a, #0b0b0b);
 }
 .hero-overlay {
   position:absolute; inset:0; background: rgba(10,10,10,0.55); z-index:1;
@@ -143,8 +141,8 @@ button { font: inherit; }
 
 /* CONTACT FORM */
 .contact-form { background:#111; padding:18px; border-radius:8px; max-width:700px; margin:14px auto 40px; }
-.contact-form .form-group { margin-bottom:12px; }
-.contact-form label { display:block; color:#FFD94B; margin-bottom:6px; font-weight:700; }
+.contact-form .form-group { margin-bottom:12px; display:flex; flex-direction:column; }
+.contact-form label { color:#FFD94B; margin-bottom:6px; font-weight:700; }
 .contact-form input, .contact-form textarea {
   width:100%; padding:10px; border-radius:6px; background:#0a0a0a; border:1px solid #222; color:#fff;
 }
@@ -161,7 +159,7 @@ button { font: inherit; }
 }
 @media (max-width:768px) {
   .menu-toggle { display:block; }
-  .main-nav .nav-links { 
+  .main-nav .nav-links {
     position:absolute; top:calc(100% + 8px); right:16px; left:auto;
     background:#0f0f0f; flex-direction:column; width:220px; display:none; padding:8px; border-radius:8px;
     box-shadow: 0 12px 36px rgba(0,0,0,0.6); z-index:1150;
