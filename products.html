@@ -112,5 +112,22 @@
   <!-- SCRIPTS -->
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/shop.js" defer></script>
+
+  <!-- HAMBURGER MENU TOGGLE -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
+
 </body>
 </html>
