@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SignalCraft Audio — About</title>
-  <meta name="description" content="Learn more about SignalCraft Audio, our boutique guitar pedals, and our mission to craft premium tone for musicians worldwide." />
+  <meta name="description" content="Learn more about SignalCraft Audio — boutique guitar pedals crafted for musicians who demand premium tone and quality." />
   <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -38,14 +38,14 @@
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <h1 class="hero-slogan">About SignalCraft Audio</h1>
-        <p class="hero-description">At SignalCraft Audio, we handcraft boutique guitar pedals with precision and passion. Every pedal is designed and tested in East London, South Africa, for musicians who demand premium tone.</p>
+        <p class="hero-description">We craft boutique pedals that blend analog warmth with precision engineering — designed and tested by musicians, for musicians.</p>
       </div>
     </section>
 
     <!-- OUR STORY -->
     <section class="container fade-in">
       <h2>Our Story</h2>
-      <p>Founded by passionate musicians and engineers, SignalCraft Audio was born out of the desire to create pedals that deliver exceptional tone, feel, and reliability. We combine analog expertise with modern design to craft pedals that inspire performance in both studio and live settings.</p>
+      <p>SignalCraft Audio was founded by musicians and engineers who share a deep love for tone. We wanted pedals that respond to touch and dynamics like instruments — not just effects. From our East London workshop, every pedal is hand-tested and built to inspire creativity.</p>
     </section>
 
     <!-- OUR PHILOSOPHY -->
@@ -54,15 +54,15 @@
       <div class="features">
         <article>
           <h3>Hand-Tested Quality</h3>
-          <p>Every pedal is individually tested to ensure it meets our rigorous standards for tone and performance.</p>
+          <p>Each unit is built, wired, and tested by hand to ensure sonic perfection and reliability.</p>
         </article>
         <article>
-          <h3>Small-Batch Production</h3>
-          <p>We focus on limited runs to maintain quality, uniqueness, and exclusivity for our customers.</p>
+          <h3>Small-Batch Craft</h3>
+          <p>We believe in limited production — not mass manufacturing — to ensure each pedal is unique and personal.</p>
         </article>
         <article>
-          <h3>Artist Collaboration</h3>
-          <p>We work closely with musicians to craft pedals that suit the needs of professionals and enthusiasts alike.</p>
+          <h3>Musician Collaboration</h3>
+          <p>From concept to testing, we collaborate with artists to craft sounds that elevate their music.</p>
         </article>
       </div>
     </section>
@@ -74,17 +74,17 @@
         <div class="card">
           <img src="assets/img/team1.jpg" alt="Founder - Dawie Olivier">
           <h4>Dawie Olivier</h4>
-          <p>Founder & Lead Designer. Passionate about boutique tones and analog circuits.</p>
+          <p>Founder & Lead Designer — devoted to capturing the nuances of analog tone in every pedal.</p>
         </div>
         <div class="card">
-          <img src="assets/img/team2.jpg" alt="Engineer - Team Member">
+          <img src="assets/img/team2.jpg" alt="Engineer - Jane Smith">
           <h4>Jane Smith</h4>
-          <p>Electronics Engineer. Specialist in analog signal processing and pedal circuitry.</p>
+          <p>Electronics Engineer — specializing in circuit design, analog filters, and clean power architecture.</p>
         </div>
         <div class="card">
-          <img src="assets/img/team3.jpg" alt="Marketing - Team Member">
+          <img src="assets/img/team3.jpg" alt="Marketing - Tom Brown">
           <h4>Tom Brown</h4>
-          <p>Marketing & Community. Connecting musicians with our pedals worldwide.</p>
+          <p>Community & Marketing — bringing the SignalCraft story to players across the globe.</p>
         </div>
       </div>
     </section>
@@ -125,23 +125,25 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="assets/js/main.js" defer></script>
-
-  <!-- HAMBURGER MENU TOGGLE -->
   <script>
+    // YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ==============================
+    // RESPONSIVE NAVIGATION FIX
+    // ==============================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
+    navLinks.classList.remove('open');
+
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+      navLinks.classList.toggle('open');
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-      });
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   </script>
-
 </body>
 </html>
