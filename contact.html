@@ -4,23 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SignalCraft Audio — Contact</title>
-  <meta name="description" content="Contact SignalCraft Audio. Reach out for questions, support, or inquiries about our boutique guitar pedals." />
+  <meta name="description" content="Contact SignalCraft Audio for orders, support, or enquiries." />
   <link rel="icon" href="assets/img/logo-full.png" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <a href="index.html">
-          <img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img">
-        </a>
-      </div>
-
+      <div class="brand"><a href="index.html"><img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img"></a></div>
       <nav class="main-nav" aria-label="Main navigation">
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
@@ -32,95 +25,44 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
-    <section class="hero">
+    <section class="hero" style="background-image:url('assets/img/hero-bg.jpeg')">
       <div class="hero-overlay"></div>
-      <div class="container hero-inner">
+      <div class="container hero-inner fade-in">
         <h1 class="hero-slogan">Get in Touch</h1>
-        <p class="hero-description">Have a question or need support? Send us a message and we’ll respond promptly.</p>
+        <p class="hero-description">Questions, collaborations or support — reach out and we'll get back to you promptly.</p>
       </div>
     </section>
 
-    <!-- CONTACT FORM -->
     <section class="container fade-in">
       <h2>Contact Us</h2>
-      <form class="contact-form" id="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
-        </div>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group"><label for="name">Name</label><input id="name" name="name" required></div>
+        <div class="form-group"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
         <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
 
-    <!-- ANIMATED WAVE -->
     <section class="bottom-wave">
-      <svg id="logo-wave-svg" class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+      <svg class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
         <defs>
           <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#FFD94B"/>
-            <stop offset="50%" stop-color="#FFC300"/>
-            <stop offset="100%" stop-color="#FFD94B"/>
-          </linearGradient>
+            <stop offset="0%" stop-color="#FFD94B"/><stop offset="50%" stop-color="#FFC300"/><stop offset="100%" stop-color="#FFD94B"/></linearGradient>
         </defs>
-        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
       </svg>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> SignalCraft Audio — Designed & hand-tested in East London, South Africa.</small>
-      <div class="social">
-        <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-        </a>
-        <a class="social-icon" href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
-        </a>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a> |
-        <a href="products.html">Products</a> |
-        <a href="about.html">About</a> |
-        <a href="contact.html" class="active">Contact</a>
-      </div>
+      <small>© <span id="year"></span> SignalCraft Audio</small>
+      <div class="social"><a class="social-icon" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></a></div>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    // Year auto-update
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Responsive menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.remove('open');
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // Simulated contact form submission
-    const contactForm = document.getElementById('contact-form');
-    if(contactForm){
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for your message! We will get back to you shortly.');
-        contactForm.reset();
-      });
-    }
-  </script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/shop.js" defer></script>
 </body>
 </html>
