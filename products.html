@@ -13,8 +13,8 @@
     <div class="container header-inner">
       <div class="brand"><a href="index.html"><img src="assets/img/logo-full.png" alt="SignalCraft Audio Logo" class="logo-img"></a></div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html" class="active">Products</a></li>
@@ -44,12 +44,14 @@
           <p>Rugged analog fuzz with boutique tone.</p>
           <button class="notify-btn btn-outline">Notify Me</button>
         </div>
+
         <div class="card fade-in">
           <img src="assets/img/pedal2.jpg" alt="Analog Delay">
           <h4>Analog Delay</h4>
           <p>Warm, lush repeats for studio and stage.</p>
           <button class="add-to-cart-btn btn-outline">Add to Cart</button>
         </div>
+
         <div class="card fade-in">
           <img src="assets/img/pedal3.jpg" alt="Overdrive">
           <h4>Overdrive</h4>
@@ -61,7 +63,6 @@
 
     <section class="bottom-wave">
       <svg class="waveform" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
-        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
         <defs>
           <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="#FFD94B"/>
@@ -69,6 +70,7 @@
             <stop offset="100%" stop-color="#FFD94B"/>
           </linearGradient>
         </defs>
+        <polyline id="wave-low" fill="none" stroke="url(#wave-gradient)" stroke-width="4" stroke-linecap="round"></polyline>
       </svg>
     </section>
   </main>
@@ -77,13 +79,14 @@
     <div class="container">
       <small>© <span id="year"></span> SignalCraft Audio</small>
       <div class="social">
-        <a class="social-icon" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-        <a class="social-icon" href="#"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg></a>
+        <a class="social-icon" href="#" aria-label="Instagram">IG</a>
+        <a class="social-icon" href="#" aria-label="YouTube">YT</a>
       </div>
     </div>
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/wave.js" defer></script>
   <script src="assets/js/shop.js" defer></script>
 </body>
 </html>
